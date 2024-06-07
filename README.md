@@ -1,5 +1,15 @@
-# crypt_cli
+# crypt_cli_js
 Minimalist CLI program to store, cipher and decipher data locally, by getting password and randomly generated salt and such and take cares of it.
+
+## Installation
+```bash
+npm i -g crypt_cli-js
+```
+
+**Usage**;
+```bash
+ccli create key-for-something
+```
 
 ## Commands
 - [help](#help-h-help)

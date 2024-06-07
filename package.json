@@ -1,7 +1,7 @@
 {
-  "name": "crypt_cli",
+  "name": "crypt_cli_js",
   "description": "Minimalist CLI program to store, cipher and decipher data locally",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "license": "ISC",
   "type": "module",
