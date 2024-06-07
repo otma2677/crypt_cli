@@ -72,7 +72,7 @@ export default async function () {
   cli
     .command('read <label>')
     .alias('r')
-    .option('-c, --clipboard', 'Put the deciphered content into the clipboard')
+    .option('-c, --clipboard', 'Put the deciphered content into the clipboard', false)
     .description('Read an entry under the given label.')
     .action(getEntry);
 
