@@ -29,7 +29,7 @@ export default async function () {
   const cli = program
     .name('ccli')
     .description('Minimalist CLI program to store, cipher and decipher data locally.')
-    .version('0.1.0');
+    .version(packageContent['version']);
 
   cli
     .command('path')
