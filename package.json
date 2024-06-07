@@ -1,7 +1,7 @@
 {
   "name": "crypt_cli_js",
   "description": "Minimalist CLI program to store, cipher and decipher data locally",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "ISC",
   "type": "module",
@@ -11,13 +11,11 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.10",
     "@types/node": "^20.14.1",
+    "@types/prompt": "^1.1.8",
     "vitest": "^1.6.0"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.591.0",
-    "@aws-sdk/s3-request-presigner": "^3.591.0",
     "@google-cloud/storage": "^7.11.1",
-    "@types/prompt": "^1.1.8",
     "better-sqlite3": "^11.0.0",
     "clipboardy": "^4.0.0",
     "commander": "^12.1.0",
