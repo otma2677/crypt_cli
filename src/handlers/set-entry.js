@@ -34,24 +34,40 @@ export async function setEntry(str, opts) {
       content: {
         required: true,
         message: 'Please, enter your content: ',
-        hidden: opts['hide'],
-        replace: opts['hide'] ? '*' : null
+        hidden: opts['hideText'],
+        replace: opts['hideText'] ? '*' : null
       }
     }
   });
+
+  let note = undefined;
+  if (opts['note']) {
+    const data = await prompt.get({
+      properties: {
+        note: {
+          required: true,
+          message: 'You can add a note',
+        }
+      }
+    });
+
+    if (data)
+      note = data['note'];
+  }
 
   const password = generatePassword(result['password']);
   const cipherVectorTag = cipherGCM(result['content'], password.pass);
 
 
   const insert = connection
-    .prepare('INSERT INTO entries(label, content, salt, vector, tag) VALUES(?, ?, ?, ?, ?)')
+    .prepare('INSERT INTO entries(label, content, salt, vector, tag, note) VALUES(?, ?, ?, ?, ?, ?)')
     .run(
       str,
       cipherVectorTag.cipher,
       password.salt,
       cipherVectorTag.vector,
-      cipherVectorTag.tag
+      cipherVectorTag.tag,
+      note
     );
 
   if (insert.rowsAffected <= 1)

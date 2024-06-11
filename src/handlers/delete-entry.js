@@ -22,10 +22,6 @@ export async function deleteEntry (str, opts) {
     .prepare('DELETE FROM entries WHERE label = ?')
     .run(str);
 
-  if (deleted.rowsAffected >= 1)
-    console.info('Successfully deleted');
-  else
-    console.info(`Cannot delete entry under label ${ str } for unknown reason. Please, retry later.`);
-
   connection.close();
+  console.info('Successfully deleted');
 }

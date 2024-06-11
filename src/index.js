@@ -29,7 +29,7 @@ export default async function () {
   const cli = program
     .name('ccli')
     .description('Minimalist CLI program to store, cipher and decipher data locally.')
-    .version('0.1.4');
+    .version('0.1.5');
 
   cli
     .command('path')
@@ -64,7 +64,7 @@ export default async function () {
   cli
     .command('create <label>')
     .alias('c')
-    .option('-h, --hide-text <boolean>', 'Hide the content you prompt.', false)
+    .option('-h, --hide-text', 'Hide the content you prompt.', false)
     .option('-n, --note', 'Ask for a note to explain the label')
     .description('Create an entry with the given label.')
     .action(setEntry);
