@@ -20,7 +20,7 @@ export async function deleteEntry (str, opts) {
 
   const deleted = connection
     .prepare('DELETE FROM entries WHERE label = ?')
-    .get(str);
+    .run(str);
 
   if (deleted.rowsAffected >= 1)
     console.info('Successfully deleted');
