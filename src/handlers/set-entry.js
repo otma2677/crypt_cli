@@ -45,7 +45,7 @@ export async function setEntry(str, opts) {
 
 
   const insert = connection
-    .prepare('INSERT INTO entries(label, content, salt, vector, tag) VALUES(?, ?, ?, ?, ?, ?)')
+    .prepare('INSERT INTO entries(label, content, salt, vector, tag) VALUES(?, ?, ?, ?, ?)')
     .run(
       str,
       cipherVectorTag.cipher,
