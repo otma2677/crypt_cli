@@ -22,7 +22,7 @@ export function database() {
     vector text not null,
     tag text not null,
     note text
-  );
+  ) strict;
   
   CREATE TABLE IF NOT EXISTS configurations (
     id integer primary key not null,
@@ -31,7 +31,7 @@ export function database() {
     salt text not null,
     vector text not null,
     tag text not null  
-  );
+  ) strict;
 `);
 
   return db;

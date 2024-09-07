@@ -1,4 +1,4 @@
-#! node
+#! node --no-warnings
 import program from '../src/index.js';
 
 await program();
